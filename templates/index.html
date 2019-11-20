@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Flask+OpenCV+YOLO-lite</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<!-- url_for('static',filename='css/bootstrap.css') -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900&amp;subset=latin-ext" rel="stylesheet">
+	<!-- //Web-Fonts -->
+	<script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+	<!-- <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script> -->
+	<script src="{{ url_for('static',filename='js/echarts.min.js') }}"></script>
+	<!-- <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script> -->
+</head>
+
+<body>
+	<!-- header -->
+	<header>
+		<!-- menu -->
+		<ul id="menu">
+			<li>
+				<input id="check02" type="checkbox" name="menu" />
+				<label for="check02"><span class="fa fa-bars" aria-hidden="true"></span></label>
+				<ul class="submenu">
+					<li><a href="{{ url_for('index') }}" class="active">Flask+OpenCV+YOLO-lite</a></li>
+				</ul>
+			</li>
+		</ul>
+		<!-- //menu -->
+	</header>
+	<!-- //header -->
+
+	<!-- banner -->
+	<div class="banner_w3lspvt he-codes" >
+	<style type="text/css">
+/*	.banner_w3lspvt {
+		background: url(./images/1.jpg) no-repeat center;
+	}*/
+
+	img{
+		position:absolute;
+		left:0px;
+		top:10px;
+		z-index:-1;
+		width:100%; 
+		height:95%; 
+		width:expression(this.width > 150 ? "150px" : this.width);}
+		}
+
+	</style>
+	<!-- <img src="./images/1.jpg" > -->
+	<img src="{{ url_for('video_feed') }}" >
+
+		<div class="container-fluid">
+			<div class="banner-text pl-lg-5 pl-sm-4 ml-lg-3">
+
+<!-- 				<div class="logo-2">
+					<a href="index.html"><span class="fa fa-stumbleupon"></span></a>
+				</div> -->
+				<!-- <h2 class="my-md-4 my-3">OpenCV-Flask-YOLO-Lite</h2> -->
+				<h6>Detection Application by OpenCV run in Flask, We Used a no-GPU Model: YOLO-Lite! </h6>
+				<!-- 此处插入js图 barplot -->
+
+				
+
+
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="wthree_copy_right text-right ml-auto mr-sm-5 mr-4">
+		    <div>
+			        <div id="bar_plot_" style="width: 400px;height:200px;"></div>
+			        <script type="text/javascript">
+			            // 基于准备好的dom，初始化echarts实例
+			            var myChart = echarts.init(document.getElementById('bar_plot_'));
+			            // 使用刚指定的配置项和数据显示图表。
+			            // myChart.setOption({{ bar_data | safe }});
+
+                        // 定时更新
+
+				        $(
+				            function () {
+				                fetchData(myChart);
+				                setInterval(fetchData, 1000.0/30);
+				            }
+				        );
+
+				        function fetchData() {
+				            $.ajax({
+				                type: "GET",
+				                url: "http://127.0.0.1:8080/get_bar",
+				                dataType: 'json',
+				                success: function (result) {
+				                    myChart.setOption(result);
+				                }
+				            });
+				        }
+
+			        </script>
+			    </div>
+			<p class="text-li">Copyright &copy; 2019.徐静<a href="https://github.com/DataXujing" target="_blank" title="GitHub">GitHub</a> - Collect from <a href="https://github.com/DataXujing/openCV_flask.git" title="项目地址" target="_blank">项目地址</a></p>
+		</div>
+		<!-- //copyright -->
+	</div>
+	<!-- //banner -->
+
+
+</body>
+
+</html>
