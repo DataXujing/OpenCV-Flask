@@ -80,7 +80,9 @@ run_app.bat
 
 ### 3.演示
 
-![](static/images/face.png)(https://v.qq.com/txp/iframe/player.html?vid=r3024vzzzsp)
+[![demo](static/images/face.png)](https://v.qq.com/txp/iframe/player.html?vid=r3024vzzzsp, "demo")
+
+url: <https://v.qq.com/txp/iframe/player.html?vid=r3024vzzzsp>
 <!-- src="https://v.qq.com/txp/iframe/player.html?vid=r3024vzzzsp" -->
 
 
