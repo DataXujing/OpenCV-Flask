@@ -80,11 +80,8 @@ run_app.bat
 
 ### 3.演示
 
-
-<!-- <video id="video" controls="" preload="none" poster="">
-      <source id="mp4" src="http://xx.mp4" type="video/mp4">
-</video> -->
-<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=r3024vzzzsp" allowFullScreen="true"></iframe>
+![](static/images/face.png)(https://v.qq.com/txp/iframe/player.html?vid=r3024vzzzsp)
+<!-- src="https://v.qq.com/txp/iframe/player.html?vid=r3024vzzzsp" -->
 
 
 ### 4.TODO
